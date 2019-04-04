@@ -516,6 +516,7 @@ module Paperclip
     end
 
     def post_process_styles(*style_args) #:nodoc:
+      binding.pry
       post_process_style(:original, styles[:original]) if styles.include?(:original) && process_style?(:original, style_args)
       styles.reject{ |name, style| name == :original }.each do |name, style|
         post_process_style(name, style) if process_style?(name, style_args)
