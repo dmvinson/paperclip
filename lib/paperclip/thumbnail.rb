@@ -29,7 +29,7 @@ module Paperclip
     #   +frame_index+ - the frame index of the source file to render as the thumbnail
     def initialize(file, options = {}, attachment = nil)
       super
-
+      binding.pry
       geometry             = options[:geometry].to_s
       @crop                = geometry[-1,1] == '#'
       @target_geometry     = options.fetch(:string_geometry_parser, Geometry).parse(geometry)
